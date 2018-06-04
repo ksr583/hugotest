@@ -4,7 +4,7 @@ date: 2017-03-23
 publishdate: 2017-03-24
 
 featuredImage:
-  src: http://res.cloudinary.com/burntcow/image/upload/c_fill,w_auto,g_auto/splash_zwjx7u.jpg
+  src: //res.cloudinary.com/burntcow/image/upload/c_fill,w_auto,g_auto/splash_zwjx7u.jpg
   caption: This is some kind of caption
   alt: bridge photo
   title:
