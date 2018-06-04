@@ -20,18 +20,22 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     identifier = "work"
     name = "Work"
     url = "/work/"
+    weight = 1
 
   [[menu.main]]
     identifier = "services"
     name = "Services"
     url = "/services/"
+    weight = 2
 
   [[menu.main]]
     identifier = "team"
     name = "Team"
     url = "/team/"
+    weight = 3
 
   [[menu.main]]
     identifier = "blog"
     name = "Blog"
     url = "/blog/"
+    weight = 4
