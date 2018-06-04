@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     <title>{{ $.Site.Title }}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/main.css"/>
   </head>
-  <body>
+  <body id="js-body">
 
     {{ block "header" . }}{{ partial "header" . }}{{end}}
 
-    {{ block "main" . }}{{end}}
+    <main class="site-content" role="main">
+      {{ block "main" . }}{{end}}
+    </main>
+
 
     {{ block "footer" . }}{{ partial "footer" . }}{{end}}
 
+    {{ partial "lazy-scripts" . }}
     <script src="app.js"></script>
 
   </body>

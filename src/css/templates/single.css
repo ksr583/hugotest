@@ -1,0 +1,23 @@
+.post {
+  padding-top: 2rem;
+}
+
+.published-date {
+  position: relative;
+  display: inline-block;
+  color: var(--orange);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: var(--orange);
+
+  }
+
+}

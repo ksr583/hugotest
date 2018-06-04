@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+<div class="container">
+  {{ range .Data.Pages }}
+    <article>
+        <h2><a href="{{.Permalink}}">{{ .Title }}</a></h2>
+        {{ trim .Content "\n"}}<a href="{{.Permalink}}">Read More</a>
+    </article>
+  {{ end }}
+</div>
+
+{{ end }}

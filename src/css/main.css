@@ -1,14 +1,26 @@
 /*
   You can use import statements to include partials:
  */
-@import "imports/reset.css";
+
+@import "config/layout.css";
+@import "config/colors.css";
 
 
-/*
-  Or add your statements here:
- */
-body{
-  font-family: sans-serif;
-  font-size: 1em;
-  text-align: center;
-}
+/* Critical CSS */
+@import "global/base.css";
+@import "global/structure.css";
+@import "global/typography.css";
+@import "global/site-header.css";
+
+
+/* Non-Critical CSS */
+@import "global/footer.css";
+@import "utilities/content.css";
+
+
+/* Components */
+@import "components/featured-image.css";
+@import "components/button.css";
+
+/* Templates */
+@import "templates/single.css";
