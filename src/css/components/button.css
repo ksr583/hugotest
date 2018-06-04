@@ -1,0 +1,71 @@
+/* ===========================================================================
+  #BUTTON
+  =========================================================================== */
+
+  $white: var(--white);
+
+:root {
+  --button-color: var(--dark-gray);
+  --button-background-color: #f5f5f5;
+  --button-border-color: #cfcfcf;
+  --button-padding-x: 1.5em;
+  --button-padding-y: 0.75em;
+}
+
+  /* Button @TODO Make mixin instead(?)
+  ============================================================================== */
+
+.button {
+  padding: var(--button-padding-y) var(--button-padding-x);
+  background-color: var(--button-background-color);
+  border-color: var(--button-border-color);
+  border-radius: 3px;
+  border-width: 0 0 2px 0;
+  color: var(--dark-gray);
+  cursor: pointer;
+  font-size: var(--f7);
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  strong {
+    color: inherit;
+  }
+}
+
+.button--small { font-size: var(--f7); }
+
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .button {
+    margin-bottom: 0.5rem;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: -0.5rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &--centered {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+}

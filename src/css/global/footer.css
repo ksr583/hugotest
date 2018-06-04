@@ -1,0 +1,5 @@
+.site-footer {
+  background: var(--dark-gray);
+  flex: 0 0 auto;
+  padding: 3rem 0;
+}

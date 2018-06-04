@@ -3,9 +3,13 @@ import {spawn} from "child_process";
 import hugoBin from "hugo-bin";
 import gutil from "gulp-util";
 import flatten from "gulp-flatten";
+
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
-import cssnext from "postcss-cssnext";
+import precss from 'precss';
+import postCSSCustomProperties from 'postcss-custom-properties';
+import rfs from "rfs";
+
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -31,7 +35,21 @@ gulp.task("build-preview", ["css", "js", "fonts"], (cb) => buildSite(cb, hugoArg
 // Compile CSS with PostCSS
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
+    .pipe(postcss([
+      cssImport({ from: "./src/css/main.css" }),
+      precss({
+        preserve: true,
+        stage: 0,
+        browsers: 'last 2 versions',
+        features: [
+          'nesting-rules',
+        ],
+      }),
+      postCSSCustomProperties({
+        preserve: true
+      }),
+      rfs(),
+    ]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));

@@ -1,0 +1,9 @@
+@custom-media --xs (max-width: 36em);
+@custom-media --sm (min-width: 36em);
+@custom-media --md (min-width: 48em);
+@custom-media --lg (min-width: 62em);
+@custom-media --xl (min-width: 75em);
+
+:root {
+  --container-padding: 1.5rem;
+}

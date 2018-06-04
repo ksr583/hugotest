@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+  <article class="content post">
+    <div class="container container--narrow">
+      <time class="published-date" datetime=".PublishDate">{{ .PublishDate.Format "Jan 2" }}</time>
+
+      <h1 class="display article__title">{{- .Title -}}</h1>
+      {{ with .Params.intro }}
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+    </div>
+
+    {{ partial "featured-image.html" . }}
+
+    <div class="container container--narrow">
+      {{- .Content -}}
+    </div>
+
+  </article>
+
+{{ end }}

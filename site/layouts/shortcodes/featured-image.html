@@ -1,0 +1,23 @@
+<figure class="featured-image {{ with .Get "class"}}{{.}}{{ end }}" >
+  <img
+    src="{{ .Get "src" }}"
+    {{ if or (.Get "alt") (.Get "caption") }}
+      alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"
+    {{ end }}
+  />
+  {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+    <figcaption class="caption">
+      {{ if isset .Params "title" }}
+        <h4 class="caption__title">{{ .Get "title" }}</h4>
+      {{ end }}
+      {{ if or (.Get "caption") (.Get "attr")}}
+        <p class="caption__content">
+          {{- .Get "caption" -}}
+          {{ with .Get "attrlink"}}<a href="{{.}}">{{ end }}
+              {{- .Get "attr" -}}
+          {{ if .Get "attrlink"}}</a>{{ end }}
+        </p>
+      {{ end }}
+    </figcaption>
+  {{ end }}
+</figure>
