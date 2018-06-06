@@ -60,6 +60,10 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   position: relative;
+
+  &:first-of-type:not(.has-background) {
+    padding-top: 0;
+  }
 }
 
 .container {
@@ -87,12 +91,9 @@ body {
 
 .flex {
   display: flex;
+  @media (--md) { &-md { display: flex; } }
 }
 
 .items-center {
   align-items: center;
-}
-
-@media (--md) {
-  .flex-md { display: flex; }
 }

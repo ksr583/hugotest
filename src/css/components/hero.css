@@ -5,6 +5,7 @@
   z-index: 0;
   /* stops triangle overlay from causing side scrolling */
   overflow-x: hidden;
+  margin-bottom: -3rem;
 
   @media (--md) {
     height: 32rem;

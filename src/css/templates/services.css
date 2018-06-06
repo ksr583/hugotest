@@ -1,8 +1,25 @@
+.service {
+  margin-top: 0;
+
+  + .service {
+    margin-top: 5rem;
+  }
+}
+
+.service__description {
+  margin-top: 1.5rem;
+}
+
 .service__image-wrap {
   display: block;
   width: 50%;
 
   @media (--md) {
-    width: 80%;
+    width: 90%;
+
+    /* Align images to the outside */
+    .even & {
+      margin: 0 0 0 auto;
+    }
   }
 }

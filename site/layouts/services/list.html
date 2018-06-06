@@ -18,20 +18,37 @@
 
 </header>
 
-<section class="section">
+<section class="section services">
   <div class="container">
-    {{ range .Data.Pages }}
+    {{ range $i, $p := .Data.Pages }}
 
-      <div class="columns flex-md items-center">
-        <div class="column">
+      <div class="columns columns--staggered service flex-md items-center
+        {{ if not (modBool $i 2) }}even{{ end }}
+        {{ if (eq $i 0) }}first{{end}}
+      ">
+        <div class="column column--half">
           <picture class="service__image-wrap">
-            <img class="img-responsive" src="{{ .Params.thumb.src }}" alt="{{ .Params.thumb.alt }}">
+            <img class="service__image img-responsive"
+              src="{{ .Params.thumb.src }}"
+              alt="{{ .Params.thumb.alt }}">
           </picture>
         </div>
-        <div class="column">
-          <article class="content">
-            <h2><a href="{{.Permalink}}">{{ .Title }}</a></h2>
-            <a href="{{.Permalink}}">Read More</a>
+        <div class="column column--half">
+          <article>
+
+            <h2 class="service__title"><a href="{{.Permalink}}">{{ .Title }}</a></h2>
+            <p class="service__description">
+              {{ .Description }}
+              <a class="link"
+                href="{{.Permalink}}">{{ .Site.Params.readMoreText }}
+              </a>
+            </p>
+
+            <ul class="tags">
+              {{ range .Params.tags }}
+                <li class="tag-item"><a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+              {{ end }}
+            </ul>
           </article>
         </div>
       </div>

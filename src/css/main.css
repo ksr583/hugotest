@@ -15,12 +15,14 @@
 
 /* Non-Critical CSS */
 @import "global/footer.css";
+@import "utilities/grid.css";
 @import "utilities/content.css";
-
+@import "utilities/spacing.css";
 
 /* Components */
 @import "components/featured-image.css";
 @import "components/button.css";
+@import "components/tag.css";
 
 /* Templates */
 @import "templates/single.css";
