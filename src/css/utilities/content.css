@@ -2,3 +2,8 @@
   background: var(--dark-gray);
   color: var(--white);
 }
+
+.object-fit {
+  object-fit: cover;
+  object-position: 50% 50%;
+}

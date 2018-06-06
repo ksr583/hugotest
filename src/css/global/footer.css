@@ -17,6 +17,20 @@
 
 .site-footer__nav .nav__list {
   margin-left: -1.5625rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--md) {
+    flex-wrap: nowrap;
+  }
+
+  .nav__item {
+    flex: 1 0 50%;
+
+    @media (--md) {
+      flex: 0 0 auto;
+    }
+  }
 }
 
 .site-footer__content {

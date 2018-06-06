@@ -76,7 +76,7 @@
       <div class="site-footer__spacer spacer"></div>
 
       <nav class="site-footer__nav inverse" id="js-footer-nav" role="navigation" aria-label="footer">
-        <ul class="nav__list" id="menu">
+        <ul class="nav__list site-footer__nav-list" id="menu">
           {{ range .Site.Menus.main }}
           <li class="nav__item">
             <a class="nav__link" href="{{ .URL }}">
@@ -88,7 +88,7 @@
       </nav>
     </div>
     <div class="site-footer__legal">
-        &copy; Copyright {{ now.Format "2018" }} {{ .Site.Params.companyName }}
+        &copy; Copyright {{ now.Format "2012" }} {{ .Site.Params.companyName }}
     </div>
   </div>
 </footer>

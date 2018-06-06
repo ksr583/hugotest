@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<header class="hero hero--page {{ with .Page.Params.hero }}hero--has-background{{end}}">
+
+  {{ with .Page.Params.hero }}
+    <img class="hero__image object-fit" src="{{- .background -}}" class="object-fit" alt="" />
+    <div class="hero__triangle" aria-hidden></div>
+  {{end}}
+
+  <div class="hero__content-wrap">
+    <div class="container">
+      <div class="hero__content">
+          <h1>{{ .Title }}</h1>
+          <p>{{ .Description }}</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+</div>
+
+<section class="section">
+
+</section>
+
+{{ end }}

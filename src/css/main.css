@@ -11,7 +11,7 @@
 @import "global/structure.css";
 @import "global/typography.css";
 @import "global/site-header.css";
-
+@import "components/hero.css";
 
 /* Non-Critical CSS */
 @import "global/footer.css";
@@ -24,3 +24,4 @@
 
 /* Templates */
 @import "templates/single.css";
+@import "templates/work.css";

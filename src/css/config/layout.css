@@ -6,4 +6,6 @@
 
 :root {
   --container-padding: 1.5rem;
+  --container-max-width-lg: 59em;
+  --container-max-width-xl: 72em;
 }

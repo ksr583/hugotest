@@ -2,8 +2,12 @@
   z-index: 1;
 
   .nav-open & {
-    background: white;
     position: sticky;
+    top: 0;
+  }
+
+  .has-hero & {
+    position: absolute;
     top: 0;
   }
 }
@@ -54,6 +58,14 @@
     background: transparent;
     color: var(--dark-gray);
     transform: none;
+
+
+  }
+
+  .has-hero & {
+    @media (--md) {
+      color: var(--white);
+    }
   }
 
   .nav-open & {
@@ -73,6 +85,10 @@
 
   @media (--md) {
     display: none;
+  }
+
+  .has-hero & {
+    color: var(--white);
   }
 }
 
