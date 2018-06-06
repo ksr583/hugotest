@@ -3,7 +3,7 @@
 <header class="hero hero--page {{ with .Page.Params.hero }}hero--has-background{{end}}">
 
   {{ with .Page.Params.hero }}
-    <img class="hero__image object-fit" src="{{- .background -}}" class="object-fit" alt="" />
+    <img class="hero__image object-fit" src="" data-src="{{- .background -}}" class="object-fit" alt="" />
     <div class="hero__triangle" aria-hidden></div>
   {{end}}
 

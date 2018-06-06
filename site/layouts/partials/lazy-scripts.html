@@ -1,3 +1,4 @@
+<!-- Load Fonts -->
 <script>
   (function(d) {
     var config = {
@@ -8,3 +9,21 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 </script>
+
+<!-- Lazy Load Images -->
+<!-- https://github.com/verlok/lazyload -->
+<script>
+  // Listen to the Initialized event
+  window.addEventListener('LazyLoad::Initialized', function (e) {
+    // Get the instance and puts it in the lazyLoadInstance variable
+    lazyLoadInstance = e.detail.instance;
+  }, false);
+
+  // Set the lazyload options for async usage
+  lazyLoadOptions = {
+    /* your lazyload options */
+    // elements_selector: ".lazy"
+  };
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
