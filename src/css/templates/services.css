@@ -2,7 +2,17 @@
   margin-top: 0;
 
   + .service {
-    margin-top: 5rem;
+    margin-top: 3rem;
+
+    @media (--md) {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.service__title {
+  @media (--xs) {
+    margin-top: 1.5rem;
   }
 }
 
