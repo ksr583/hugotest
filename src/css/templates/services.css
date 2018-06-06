@@ -1,0 +1,8 @@
+.service__image-wrap {
+  display: block;
+  width: 50%;
+
+  @media (--md) {
+    width: 80%;
+  }
+}
