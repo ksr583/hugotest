@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     <title>{{ $.Site.Title }}</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <style>
+      @font-face {
+        font-family: 'BebasNeue';
+        src: url('fonts/BebasNeue-webfont.eot');
+        src: url('fonts/BebasNeue-webfontd41d.eot?#iefix') format('embedded-opentype'),
+            url('fonts/BebasNeue-webfont.woff2') format('woff2'),
+            url('fonts/BebasNeue-webfont.woff') format('woff'),
+            url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+            url('fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: auto;
+      }
+    </style>
     <link rel="stylesheet" href="css/main.css"/>
   </head>
-  <body id="js-body">
+  <body id="js-body" class="{{ with .Params.hero }}has-hero{{end}}">
+    <div class="outer-wrapper">
+      {{ block "header" . }}
+        {{ partial "header" . }}
+      {{end}}
 
-    {{ block "header" . }}{{ partial "header" . }}{{end}}
+      <main class="site-content" role="main">
+        <a id="main-content" tab-index="-1"></a>
+        {{ block "main" . }}{{end}}
+      </main>
 
-    <main class="site-content" role="main">
-      {{ block "main" . }}{{end}}
-    </main>
 
-
-    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-
+      {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+    </div>
     {{ partial "lazy-scripts" . }}
-    <script src="app.js"></script>
+    <script async defer src="app.js"></script>
 
   </body>
 </html>

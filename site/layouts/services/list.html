@@ -1,0 +1,60 @@
+{{ define "main" }}
+
+<header class="hero hero--page {{ with .Page.Params.hero }}hero--has-background{{end}}">
+
+  {{ with .Page.Params.hero }}
+    <img class="hero__image object-fit" data-src="{{- .background -}}" class="object-fit" alt="" />
+    <div class="hero__triangle" aria-hidden="true"></div>
+  {{end}}
+
+  <div class="hero__content-wrap">
+    <div class="container">
+      <div class="hero__content">
+          <h1>{{ .Title }}</h1>
+          <p>{{ .Description }}</p>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<section class="section services">
+  <div class="container">
+    {{ range $i, $p := .Data.Pages }}
+
+      <div class="columns columns--staggered service flex-md items-center
+        {{ if not (modBool $i 2) }}even{{ end }}
+        {{ if (eq $i 0) }}first{{end}}
+      ">
+        <div class="column column--half">
+          <picture class="service__image-wrap">
+            <img class="service__image img-responsive"
+              data-src="{{ .Params.thumb.src }}"
+              alt="{{ .Params.thumb.alt }}">
+          </picture>
+        </div>
+        <div class="column column--half">
+          <article>
+
+            <h2 class="service__title"><a href="{{.Permalink}}">{{ .Title }}</a></h2>
+            <p class="service__description">
+              {{ .Description }}
+              <a class="link"
+                href="{{.Permalink}}">{{ .Site.Params.readMoreText }}
+              </a>
+            </p>
+
+            <ul class="tags">
+              {{ range .Params.tags }}
+                <li class="tag-item"><a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+              {{ end }}
+            </ul>
+          </article>
+        </div>
+      </div>
+
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

@@ -1,5 +1,41 @@
 .site-footer {
   background: var(--dark-gray);
   flex: 0 0 auto;
-  padding: 3rem 0;
+  padding: 1rem 0;
+}
+
+.site-footer__logo {
+  display: flex;
+  align-items: center;
+  transform: translateX(-0.75rem);
+}
+
+.site-footer__legal {
+  color: #aaaaaa;
+  font-size: var(--f7);
+}
+
+.site-footer__nav .nav__list {
+  margin-left: -1.5625rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--md) {
+    flex-wrap: nowrap;
+  }
+
+  .nav__item {
+    flex: 1 0 50%;
+
+    @media (--md) {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.site-footer__content {
+  @media (--md) {
+    display: flex;
+    align-items: center;
+  }
 }

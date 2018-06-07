@@ -1,7 +1,7 @@
 {{ $image := .Params.featuredImage }}
 <figure class="featured-image" >
   <img
-    src="{{ $image.src }}"
+    data-src="{{ $image.src }}"
     {{ if or ($image.alt) ($image.caption) }}
       alt="{{ with $image.alt}}{{.}}{{else}}{{ $image.caption }}{{ end }}"
     {{ end }}

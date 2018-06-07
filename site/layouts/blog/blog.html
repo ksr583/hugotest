@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="container">
+
+
+  <!-- Ranges through content/post/*.md -->
+  {{ range .Data.Pages }}
+    <article>
+        <h2><a href="{{.Permalink}}">{{ .Title }}</a></h2>
+        <a href="{{.Permalink}}">Read More</a>
+    </article>
+  {{ end }}
+
+
+
+</div>
+
+{{ end }}

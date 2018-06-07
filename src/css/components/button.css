@@ -2,7 +2,7 @@
   #BUTTON
   =========================================================================== */
 
-  $white: var(--white);
+$white: var(--white);
 
 :root {
   --button-color: var(--dark-gray);
@@ -37,6 +37,17 @@
 }
 
 .button--small { font-size: var(--f7); }
+
+.button--ghost {
+  background-color: transparent;
+  border-color: currentColor;
+  border-width: 2px;
+  border-style: solid;
+
+  .inverse & {
+    color: var(--white);
+  }
+}
 
 
 .buttons {

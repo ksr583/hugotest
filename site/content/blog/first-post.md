@@ -4,7 +4,7 @@ date: 2017-03-23
 publishdate: 2017-03-24
 
 featuredImage:
-  src: http://res.cloudinary.com/burntcow/image/upload/c_fill,w_auto,g_auto/splash_zwjx7u.jpg
+  src: //res.cloudinary.com/burntcow/image/upload/c_fill,w_auto,g_auto/splash_zwjx7u.jpg
   caption: This is some kind of caption
   alt: bridge photo
   title:
@@ -16,6 +16,8 @@ intro:
 ---
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+
+![this is the alt text](//res.cloudinary.com/burntcow/image/upload/c_fill,w_auto,g_auto/splash_zwjx7u.jpg)
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 

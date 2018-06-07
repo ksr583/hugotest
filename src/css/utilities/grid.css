@@ -1,0 +1,25 @@
+:root {
+  --column-spacing: 1.5rem;
+}
+
+.columns {
+  margin-left: calc(-1 * var(--column-spacing));
+  margin-right: calc(-1 * var(--column-spacing));
+
+  &--staggered {
+    &:nth-child(even) {
+      flex-flow: row-reverse nowrap;
+    }
+  }
+}
+
+.column {
+  padding-left: var(--column-spacing);
+  padding-right: var(--column-spacing);
+}
+
+.column--half {
+  @media (--md) {
+    flex: 0 1 50%;
+  }
+}

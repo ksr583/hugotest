@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<div class="container">
+  <h1>Work</h1>
+  <p>{{ .Params.description }}</p>
+</div>
+
+
+
+<section class="section">
+  <svg class="svg--slanted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <polygon fill="white" points="0,0 100,0 100,50"/>
+  </svg>
+  <div class="work-grid">
+    {{ range .Data.Pages }}
+      <article class="work-item" style="background: url({{ .Params.thumb }}) no-repeat center top; background-size: cover;">
+        <a href="{{.Permalink}}" class="work-item__content">
+          <h3>{{- .Title -}}</h3>
+          <p>{{- .Description -}}</p>
+        </a>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}
